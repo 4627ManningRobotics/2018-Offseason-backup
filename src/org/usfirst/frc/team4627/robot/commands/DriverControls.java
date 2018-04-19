@@ -51,6 +51,12 @@ public class DriverControls extends Command {
     			Robot.driveTrain.wasSmooth = Robot.driveTrain.isSmoothDriving;
     		}
     		*/
+    			
+    			if(triggerVal > RobotMap.DRIVER_MAX_SPEED) {
+    				triggerVal = RobotMap.DRIVER_MAX_SPEED;
+    			}else if(triggerVal < -RobotMap.DRIVER_MAX_SPEED) {
+    				triggerVal = - RobotMap.DRIVER_MAX_SPEED;
+    			}
     		Robot.driveTrain.setLeftMotor(triggerVal + stick);
     		Robot.driveTrain.setRightMotor(triggerVal - stick);
     }
