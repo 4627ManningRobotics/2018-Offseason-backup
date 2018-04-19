@@ -1,5 +1,7 @@
 package org.usfirst.frc.team4627.robot.commands;
 
+import org.usfirst.frc.team4627.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
@@ -9,7 +11,6 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  */
 public class LeftChooseTurnGroup extends Command {
 
-	private boolean isDone;
 	private CommandGroup c;
 	
     public LeftChooseTurnGroup() {
@@ -19,26 +20,21 @@ public class LeftChooseTurnGroup extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	this.isDone = false;
+    		if(RobotMap.FMSData.charAt(1) == 'L') {
+    			this.c = new PlanLeftLeft();
+    		}else if(RobotMap.FMSData.charAt(1) == 'R') {
+    			this.c = new PlanLeftRight();
+    		}
+			this.c.start();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	String fmsData = DriverStation.getInstance().getGameSpecificMessage().toUpperCase();
-    	if(!fmsData.equals(null)){
-    		if(fmsData.charAt(1) == 'L') {
-    			this.c = new PlanLeftLeft();
-    		}else if(fmsData.charAt(1) == 'R') {
-    			this.c = new PlanLeftRight();
-    		}
-			this.c.start();
-			this.isDone = true;
-    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return this.isDone;
+        return true;
     }
 
     // Called once after isFinished returns true
