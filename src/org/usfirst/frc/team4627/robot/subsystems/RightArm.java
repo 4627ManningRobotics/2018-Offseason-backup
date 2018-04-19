@@ -40,13 +40,14 @@ public class RightArm extends PIDSubsystem {
 	@Override
 	protected void usePIDOutput(double output) {
 		if((this.calculatePosition() < RobotMap.ARMS_MIN && output < 0) || (this.calculatePosition() > RobotMap.ARMS_MAX && output > 0)) {
-			this.liftingMotor.set(this.liftingMotor.getControlMode(), 0);
+			this.liftingMotor.set(this.liftingMotor.getControlMode(), 0); // don't move
+			
 		}else {
 			this.liftingMotor.set(liftingMotor.getControlMode(), output * RobotMap.ARM_SPEED);
 			if(output > RobotMap.LIFTING_MAX_SPEED) {
 				this.liftingMotor.set(this.liftingMotor.getControlMode(), RobotMap.LIFTING_MAX_SPEED);
-			}else if(output < -RobotMap.LIFTING_MAX_SPEED) {
-				this.liftingMotor.set(this.liftingMotor.getControlMode(), -RobotMap.LIFTING_MAX_SPEED);
+			}else if(output < -RobotMap.LIFTING_MAX_DOWN_SPEED) {
+				this.liftingMotor.set(this.liftingMotor.getControlMode(), -RobotMap.LIFTING_MAX_DOWN_SPEED);
 			}else {
 				this.liftingMotor.set(this.liftingMotor.getControlMode(), output);
 			}

@@ -32,7 +32,8 @@ public class RobotMap {
 	public static final double WRIST_MAX_SPEED = 0.5;
 	public static final double WRIST_HOLDING_SPEED = 0.2;
 	public static final double CLAMP_MAX_SPEED = 0.9;
-	public static final double LIFTING_MAX_SPEED = 0.5;
+	public static final double LIFTING_MAX_SPEED = 0.75;
+	public static final double LIFTING_MAX_DOWN_SPEED = 0.4;
 	public static double TURNING_RATE = 0.7;
 	public static final double ARM_SPEED = 1.0;
 	public static final double TURN_SPEED = 0.35;
