@@ -8,11 +8,17 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class PlanRightLeft extends CommandGroup {
 
     public PlanRightLeft() {
+    	super.addParallel(new GoToSwitch());
+    	super.addParallel(new SetIntake(-0.3));
     	
-    	//addParallel(new GoToScale());
+    	super.addSequential(new TurnToAngle(5, -0.1, 0.3, 3));
+    	super.addSequential(new DriveForward(0.5, 0.5, 2.5)); // drive
+    	super.addSequential(new TurnToAngle(-82.5, 0.4, 3));
+    	super.addSequential(new DriveForward(0.3, 0.3, 4));
+    	super.addSequential(new TurnToAngle(-82.5, 0.4, 3));
+    	super.addSequential(new DriveForward(0.3, 0.3, 0.5));
     	
-    	super.addSequential(new DriveForward(0.3, 0.3, 5)); // drive
-    	
+    	super.addSequential(new ReleaseBox());
     	/*
     	addSequential(new TurnToAngle(-90, .9, 3)); // 90 degrees, 90% speed, 3 degree acceptable error 
     	addSequential(new DriveForward(0.9, 0.9, 90)); // drive

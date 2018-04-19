@@ -12,8 +12,8 @@ public class PlanLeftLeft extends CommandGroup {
     	super.addParallel(new SetIntake(-0.3));
     	
     	super.addSequential(new TurnToAngle(-5, -0.1, 0.3, 3));
-    	super.addSequential(new DriveForward(0.3, 0.3, 5));
-    	super.addSequential(new TurnToAngle(90, 0.3, 3));
+    	super.addSequential(new DriveForward(0.3, 0.3, 3.25));
+    	super.addSequential(new TurnToAngle(90, 0.4, 3));
     	super.addSequential(new DriveForward(0.3, 0.3, 1));
     	super.addSequential(new ReleaseBox());
     	
