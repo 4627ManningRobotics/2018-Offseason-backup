@@ -27,7 +27,7 @@ public class DriverControls extends Command {
     protected void execute() {
     		double triggerVal = Robot.oi.getDriverRawAxis(RobotMap.RIGHT_TRIGGER) - Robot.oi.getDriverRawAxis(RobotMap.LEFT_TRIGGER);
     		double stick = Robot.oi.getDriverRawAxis(RobotMap.LEFT_STICK_X) * RobotMap.TURNING_RATE;
-    		/*
+    		
     		//if(Robot.driveTrain.isSmoothDriving) {
     			this.isTurning = (stick >= 0.1) || (stick <= -0.1);
     		
@@ -51,7 +51,6 @@ public class DriverControls extends Command {
     			Robot.driveTrain.wasSmooth = Robot.driveTrain.isSmoothDriving;
     		}
     		*/
-    			
     		Robot.driveTrain.setLeftMotor(triggerVal + stick);
     		Robot.driveTrain.setRightMotor(triggerVal - stick);
     }

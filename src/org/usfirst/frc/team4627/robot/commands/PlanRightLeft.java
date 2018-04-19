@@ -11,7 +11,7 @@ public class PlanRightLeft extends CommandGroup {
     	
     	//addParallel(new GoToScale());
     	
-    	addSequential(new DriveForward(0.3, 0.3, 5)); // drive
+    	super.addSequential(new DriveForward(0.3, 0.3, 5)); // drive
     	
     	/*
     	addSequential(new TurnToAngle(-90, .9, 3)); // 90 degrees, 90% speed, 3 degree acceptable error 

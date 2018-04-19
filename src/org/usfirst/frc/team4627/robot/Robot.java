@@ -14,6 +14,7 @@ import org.usfirst.frc.team4627.robot.commands.TurnAndAddData;
 import org.usfirst.frc.team4627.robot.commands.LeftChooseTurnGroup;
 import org.usfirst.frc.team4627.robot.commands.NNDistanceTraining;
 import org.usfirst.frc.team4627.robot.commands.PlanLeftLeft;
+import org.usfirst.frc.team4627.robot.commands.RightChooseTurnGroup;
 import org.usfirst.frc.team4627.robot.commands.SensorAuto;
 import org.usfirst.frc.team4627.robot.commands.SystemsCheck;
 import org.usfirst.frc.team4627.robot.subsystems.*;
@@ -56,7 +57,7 @@ public class Robot extends IterativeRobot {
 		//this.autoChooser.addObject("Sensor Auto: ", new SensorAuto());
 		this.autoChooser.addObject("Plan Left: ", new LeftChooseTurnGroup());
 		this.autoChooser.addObject("Systems Check: ", new SystemsCheck());
-		//this.autoChooser.addObject("Plan Right: ", new RightChooseTurnGroup());
+		this.autoChooser.addObject("Plan Right: ", new RightChooseTurnGroup());
 		this.autoChooser.addObject("Auto Distance Training: ", new NNDistanceTraining(0.2));
 		this.autoChooser.addObject("Auto Turning Training: ", new TurnAndAddData());
 		SmartDashboard.putData("Auto Chooser: ", this.autoChooser);

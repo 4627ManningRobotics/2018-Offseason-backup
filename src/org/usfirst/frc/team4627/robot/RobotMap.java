@@ -102,7 +102,7 @@ public class RobotMap {
 	public static final double WRIST_D = 0;
 	
 	
-	public static final double MANUAL_ARM_SCALING = 2;
+	public static final double MANUAL_ARM_SCALING = 1.5;
 	public static final double MANUAL_WRIST_SCALING = 5;
 
 	public static final NN TURNING_NETWORK = new NN("/home/lvuser/Saves/turnNetSaveTest.txt", "/home/lvuser/Saves/turnSetSaveTest.txt"); 

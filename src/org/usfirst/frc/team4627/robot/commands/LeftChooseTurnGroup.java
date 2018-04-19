@@ -20,9 +20,9 @@ public class LeftChooseTurnGroup extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    		if(RobotMap.FMSData.charAt(1) == 'L') {
+    		if(RobotMap.FMSData.charAt(0) == 'L') {
     			this.c = new PlanLeftLeft();
-    		}else if(RobotMap.FMSData.charAt(1) == 'R') {
+    		}else if(RobotMap.FMSData.charAt(0) == 'R') {
     			this.c = new PlanLeftRight();
     		}
 			this.c.start();
