@@ -38,7 +38,7 @@ public class ArmManualControl extends Command {
     	
     	//Get the DPadX value, scale it and increment the wrist setpoint, constraining to downStow and upStow
     	double rightJoyX = Robot.oi.getOperatorRawAxis(RobotMap.RIGHT_STICK_X);
-    	double scaledDPadX = rightJoyX * -RobotMap.MANUAL_WRIST_SCALING;
+    	double scaledDPadX = rightJoyX * RobotMap.MANUAL_WRIST_SCALING;
     	double newWristSetpoint= Robot.wrist.getSetpoint() + scaledDPadX;
     	newWristSetpoint = constrain(newWristSetpoint, RobotMap.WRIST_DOWN_STOW, RobotMap.WRIST_UP_STOW);
     	Robot.wrist.setSetpoint( newWristSetpoint );
