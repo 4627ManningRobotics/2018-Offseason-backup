@@ -54,7 +54,7 @@ public class RobotMap {
 	public static final double WRIST_SCALE = 245;
 	public static final double WRIST_DIRECTLY_UP = 260;
 	
-	public static final double ARMS_GROUND = 15;
+	public static final double ARMS_GROUND = 25;//changed from 15 april 20
 	public static final double ARMS_SWITCH = 70; // 50 is level with the ground
 	public static final double ARMS_SCALE = 130;
 	public static final double ARMS_DEADZONE_MIN = 70; 
